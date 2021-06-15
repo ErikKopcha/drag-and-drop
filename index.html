@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+        <div class="row">
+            <div class="col-header start">In process</div>
+            <div class="col-header progress">In line</div>
+            <div class="col-header done">Done</div>
+        </div>
+
+        <div class="row">
+          <div class="placeholder">
+            <div class="item">Learn Angular</div>
+          </div>
+          <div class="placeholder"></div>
+          <div class="placeholder"></div>
+        </div>
+      </div>
+
+    <script src="index.js"></script>
+    <script type="text/javascript">
+        const drag = new DragAndDrop({
+            elements: {
+                dragItemsClass: '.item',
+                rows: '.placeholder'
+            }
+        }).init();
+    </script>
+</body>
+</html>
