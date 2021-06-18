@@ -65,14 +65,18 @@ class DragAndDrop {
     }
 
     dragenter(e) {
-        this.dragItem.classList.add('opacity-f')
-        try { e.target.appendChild(this.dragItem); } catch (e) { }
+        if (!e.target.classList.contains('item')) {
+            this.dragItem.classList.add('opacity-f')
+            try { e.target.appendChild(this.dragItem); } catch (e) { }
+        }
     }
 
     dragleave(e) {}
 
     drop(e) {
-        try { e.target.appendChild(this.dragItem); } catch (e) { }
-        e.target.classList.remove('opacity-f');
+        if (!e.target.classList.contains('item')) {
+            try { e.target.appendChild(this.dragItem); } catch (e) { }
+            e.target.classList.remove('opacity-f');
+        }
     }
 }
